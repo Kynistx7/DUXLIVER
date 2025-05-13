@@ -1,0 +1,252 @@
+/* --- Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif; /* Corrigido nome da fonte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    background-color: rgb(243, 231, 3); /* Cor de fundo mais escura para o corpo */
+    color: #e0e0e0; /* Cor de texto padrão clara para contraste */
+    padding: 15px; /* Adiciona um respiro em telas muito pequenas */
+}
+
+/* --- Container Principal --- */
+.container {
+    display: flex;
+    width: 100%; /* Ocupa a largura disponível, respeitando o padding do body */
+    max-width: 1100px; /* Largura máxima aumentada um pouco */
+    background-color: yellow; /* Cinza escuro para o container */
+    border-radius: 10px; /* Bordas levemente mais arredondadas */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    overflow: hidden;
+}
+
+/* --- Seções (Esquerda e Direita) --- */
+.left-section {
+    width: 50%; /* Divide o espaço igualmente */
+    /* Mantendo um gradiente, mas com os tons escuros */
+    background-color: yellow;
+    color: white;
+    padding: 40px; /* Mais padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centraliza texto/logo */
+}
+
+.right-section {
+    width: 50%; /* Divide o espaço igualmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px; /* Mais padding */
+    background-color: rgb(14, 13, 13) /* Garante fundo uniforme */
+}
+
+/* --- Logo --- */
+.logo {
+    max-width: 75%; /* Ajuste conforme necessário */
+    height: auto; /* Mantém proporção */
+    margin-bottom: 25px;
+    /* Se o seu logo for escuro, pode precisar de um filtro para aparecer bem */
+    /* filter: brightness(0) invert(1); */ /* Exemplo: Inverte cores (preto vira branco) */
+}
+
+/* --- Caixa de Login/Cadastro --- */
+.login-box, .cadastro-box { /* Unificado */
+    width: 100%;
+    max-width: 380px; /* Aumenta um pouco a largura máxima */
+    text-align: center;
+}
+
+.login-box h2, .cadastro-box h2 {
+    color: #ffffff; /* Título branco */
+    margin-bottom: 30px; /* Mais espaço abaixo do título */
+    font-size: 2.2em; /* Título maior */
+    font-weight: 600; /* Peso da fonte */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Mantém a fonte do sistema */
+}
+
+/* --- Grupos de Input --- */
+.input-group {
+    position: relative;
+    margin-bottom: 25px; /* Mais espaço entre inputs */
+    text-align: left; /* Alinha label à esquerda */
+}
+
+.input-group label {
+    display: block; /* Quebra linha */
+    color: #b0b0b0; /* Cinza claro para label */
+    margin-bottom: 8px; /* Espaço abaixo do label */
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input[type="email"],
+.input-wrapper input[type="password"] {
+    width: 100%; /* Ocupa toda a largura */
+    padding: 14px 12px; /* Padding interno (vertical, horizontal) */
+    border: 1px solid #444; /* Borda cinza mais escura */
+    border-radius: 6px; /* Bordas mais suaves */
+    background-color: #f8f5f5; /* Fundo do input levemente diferente */
+    color: #e0e0e0; /* Texto claro dentro do input */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+/* Estilo de Foco para Inputs */
+.input-wrapper input[type="email"]:focus,
+.input-wrapper input[type="password"]:focus {
+    outline: none; /* Remove o outline padrão */
+    border-color: #1e90ff; /* Uma cor de destaque (azul dodger) para foco */
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2); /* Sombra externa suave no foco */
+}
+
+/* Placeholder Styling */
+.input-wrapper input::placeholder {
+    color: #777; /* Cor do placeholder */
+    opacity: 1; /* Garante visibilidade */
+}
+
+/* Remove a definição de .icon se não estiver usando ícones */
+/* .input-wrapper .icon { ... } */
+
+/* --- Botões --- */
+.login-box button, .cadastro-box button {
+    background-color: yellow; /* Azul dodger como cor principal do botão */
+    color: rgb(10, 10, 10);
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Transição suave */
+    margin-top: 15px; /* Espaço acima do botão */
+}
+
+.login-box button:hover, .cadastro-box button:hover {
+    background-color: #0e0e0f; /* Azul um pouco mais escuro no hover */
+}
+
+.login-box button:active, .cadastro-box button:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* --- Links e Textos Adicionais --- */
+.login-box p, .cadastro-box p {
+    margin-top: 25px; /* Mais espaço */
+    font-size: 0.95em; /* Tamanho do texto */
+    color: #0f0f0f; /* Cor do texto */
+}
+
+.login-box a, .cadastro-box a {
+    color: #1e90ff; /* Mesma cor do botão para links */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-box a:hover, .cadastro-box a:hover {
+    text-decoration: underline;
+    color: #4caaff; /* Cor mais clara no hover do link */
+}
+
+/* --- Mensagem de Erro --- */
+#error-message {
+    color: #ff6b6b; /* Vermelho mais vibrante para erros */
+    margin-top: -15px; /* Puxa para mais perto do campo acima */
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    min-height: 1.2em; /* Garante espaço mesmo vazio */
+    text-align: left; /* Alinha à esquerda */
+}
+
+/* --- Indicador de Loading (se usar o de app.js) --- */
+.loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(30, 30, 30, 0.85); /* Fundo #1e1e1e com transparência */
+    color: rgb(5, 5, 5);
+    padding: 25px 35px;
+    border-radius: 8px;
+    z-index: 1000;
+    font-family: "Open Sans", sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px); /* Efeito de desfoque no fundo (suporte limitado) */
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) { /* Ajusta ponto de quebra */
+    .container {
+        flex-direction: column; /* Empilha as seções */
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .left-section {
+        padding: 30px;
+        min-height: 200px; /* Altura mínima para a seção do logo */
+        border-bottom: 1px solid #444; /* Linha divisória */
+    }
+
+    .right-section {
+        padding: 30px;
+    }
+
+     .logo {
+        max-width: 50%; /* Reduz logo em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0; /* Remove padding do body em telas muito pequenas */
+    }
+    .container {
+        border-radius: 0; /* Remove bordas arredondadas */
+        min-height: 100vh;
+    }
+
+    .left-section, .right-section {
+        padding: 25px; /* Ajusta padding */
+    }
+
+    .login-box h2, .cadastro-box h2 {
+        font-size: 1.9em; /* Reduz título */
+    }
+
+    .input-wrapper input[type="email"],
+    .input-wrapper input[type="password"] {
+        padding: 12px 10px; /* Ajusta padding interno */
+    }
+
+    .login-box button, .cadastro-box button {
+        padding: 12px 15px; /* Ajusta padding do botão */
+        font-size: 1em;
+    }
+
+     .logo {
+        max-width: 60%; /* Ajusta logo */
+    }
+}

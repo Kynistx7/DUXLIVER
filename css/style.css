@@ -1,0 +1,327 @@
+/* Reset e base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Estilos do Cabeçalho Corrigidos --- */
+header {
+  background: yellow;
+  color: rgb(6, 6, 6);
+  padding: 1rem 1.5rem; /* Padding vertical e horizontal */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container principal do cabeçalho */
+.header-content {
+  display: flex;
+  justify-content: space-between; /* Coloca os grupos .logo-titulo e .navegacao nas extremidades */
+  align-items: center; /* Alinha os grupos verticalmente */
+  max-width: 1200px; /* Opcional: Limita a largura do conteúdo do header em telas grandes */
+  margin: 0 auto;    /* Opcional: Centraliza o conteúdo se max-width for usado */
+  padding: 0 1rem;   /* Opcional: Adiciona padding interno se necessário */
+}
+
+/* Grupo da Logo e Título */
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre a logo e o título */
+}
+
+.logo-titulo img {
+  height: 60px; /* Altura da logo */
+  width: auto;
+}
+
+.logo-titulo h1 {
+  margin: 0; /* Remove margens padrão do H1 */
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgb(6, 6, 6); /* Garante a cor do texto do H1 */
+}
+
+/* Grupo da Navegação e Carrinho */
+.navegacao {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaço entre os links e o carrinho */
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: #333; /* Cor padrão dos links */
+  font-weight: 500;
+  transition: color 0.2s ease; /* Efeito suave na mudança de cor */
+}
+
+.navegacao a:hover {
+  color: #007bff; /* Cor ao passar o mouse */
+}
+
+/* Estilo específico para o link/imagem do carrinho */
+.link-carrinho img {
+  height: 30px; /* Altura do ícone do carrinho */
+  width: auto;
+  display: block; /* Evita espaço extra indesejado */
+}
+
+/* --- Fim dos Estilos do Cabeçalho Corrigidos --- */
+
+
+/* --- Estilos do Conteúdo Principal --- */
+main {
+  flex: 1; /* Faz o main ocupar o espaço restante */
+  padding: 2rem 1rem; /* Adiciona mais padding vertical */
+  max-width: 1100px; /* Largura máxima para o conteúdo principal */
+  margin: 0 auto; /* Centraliza o main */
+  width: 100%; /* Garante que ocupe a largura disponível até o max-width */
+}
+
+/* --- Estilos da Grade de Produtos --- */
+.produtos {
+  display: grid;
+  /* Cria colunas responsivas:
+     - Repete colunas que tenham no mínimo 150px e no máximo 1fr (fração do espaço)
+     - Adapta o número de colunas à largura da tela */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem; /* Aumenta o espaço entre os produtos */
+}
+
+.produto {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 15px; /* Aumenta o padding interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.2s ease, transform 0.2s ease; /* Adiciona transição de transform */
+}
+
+.produto:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+  transform: translateY(-5px); /* Leve efeito de levantar ao passar o mouse */
+}
+
+.produto img {
+  width: 100%; /* Faz a imagem ocupar a largura do card */
+  max-width: 140px; /* Limita o tamanho máximo da imagem */
+  height: 140px;  /* Define uma altura fixa */
+  object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+  border-radius: 6px;
+  margin-bottom: 0.75rem; /* Aumenta espaço abaixo da imagem */
+}
+
+.produto-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem; /* Aumenta espaço abaixo do nome */
+  min-height: 2.5em; /* Garante espaço para nomes de 2 linhas (ajuste 'em' conforme font-size) */
+  font-size: 0.95rem; /* Ajusta o tamanho da fonte do nome */
+  color: #444; /* Escurece um pouco a cor do nome */
+}
+
+.produto-preco {
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 1rem; /* Aumenta um pouco o espaço abaixo do preço */
+  font-size: 1.1rem; /* Aumenta um pouco o preço */
+}
+
+button.adicionar {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem; /* Aumenta padding do botão */
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.3s ease;
+  font-size: 0.9rem; /* Ajusta tamanho da fonte do botão */
+}
+
+button.adicionar:hover {
+  background: #218838;
+}
+
+/* --- Estilos do Carrinho --- */
+.carrinho {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 2rem; /* Aumenta espaço acima do carrinho */
+  padding: 1.5rem; /* Aumenta padding interno */
+  font-size: 0.9rem;
+}
+
+.carrinho h2 {
+  margin: 0 0 1rem 0; /* Aumenta margem inferior */
+  font-size: 1.3rem; /* Aumenta tamanho do título */
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.75rem; /* Aumenta padding abaixo da borda */
+  color: #333;
+}
+
+.carrinho-lista {
+  max-height: 250px; /* Aumenta altura máxima */
+  overflow-y: auto; /* Mantém scroll se necessário */
+  margin-bottom: 1rem; /* Aumenta espaço abaixo da lista */
+  padding-right: 10px; /* Adiciona espaço para a barra de rolagem não colar no texto */
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem; /* Aumenta espaço entre itens */
+  align-items: center;
+  padding: 0.4rem 0; /* Adiciona padding vertical leve */
+  border-bottom: 1px solid #eee; /* Linha sutil separando itens */
+}
+.item-carrinho:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.item-carrinho span {
+  flex-basis: 60%; /* Dá mais espaço para o nome do item */
+  padding-right: 10px;
+}
+
+.item-quantidade {
+  flex-basis: 15%;
+  text-align: center;
+  color: #555;
+}
+
+.item-total {
+  flex-basis: 25%;
+  text-align: right;
+  font-weight: 700;
+  color: #333;
+}
+
+.total-geral {
+  font-weight: 700;
+  text-align: right;
+  font-size: 1.2rem; /* Aumenta tamanho do total */
+  margin-top: 1rem; /* Aumenta espaço acima do total */
+  color: #007bff;
+  padding-top: 1rem; /* Adiciona espaço acima do total */
+  border-top: 2px solid #eee; /* Linha separando do último item */
+}
+
+/* --- Estilos de Boas-Vindas --- */
+.boas-vindas {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.boas-vindas .imagem-boas-vindas {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.boas-vindas h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.boas-vindas p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* --- Estilos Responsivos --- */
+@media (max-width: 768px) {
+  /* Ajustes para tablets */
+  .header-content {
+      padding: 0 1rem; /* Garante padding em telas menores */
+  }
+  .navegacao {
+      gap: 15px; /* Diminui o gap da navegação */
+  }
+  .navegacao a {
+      font-size: 0.9rem; /* Pode diminuir um pouco a fonte */
+  }
+  .logo-titulo img {
+      height: 50px; /* Pode diminuir a logo */
+  }
+   .logo-titulo h1 {
+      font-size: 1.4rem; /* Pode diminuir o título */
+  }
+}
+
+
+@media (max-width: 600px) {
+   /* Ajustes para celulares maiores */
+  .header-content {
+    flex-direction: column; /* Coloca logo/titulo acima da navegação */
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    gap: 10px; /* Espaço entre linha logo/titulo e linha navegação */
+  }
+   .navegacao {
+     width: 100%; /* Faz a navegação ocupar a largura */
+     justify-content: space-around; /* Distribui os links */
+     padding-top: 10px;
+     border-top: 1px solid rgba(0,0,0,0.1); /* Linha separadora opcional */
+   }
+   main {
+       padding: 1.5rem 0.5rem; /* Diminui padding lateral no main */
+   }
+   .produtos {
+       gap: 1rem; /* Diminui gap dos produtos */
+   }
+}
+
+@media (max-width: 400px) {
+  /* Ajustes mais finos para celulares menores */
+  .produtos {
+    /* Muda para 1 coluna se auto-fit não for suficiente */
+    grid-template-columns: 1fr;
+  }
+  .produto {
+      padding: 10px;
+  }
+  .produto img {
+      max-width: 120px;
+      height: 120px;
+  }
+  .header-content {
+      padding: 0.8rem 1rem; /* Ajusta padding do header */
+  }
+   .navegacao {
+       gap: 10px;
+       font-size: 0.85rem;
+   }
+   .link-carrinho img {
+       height: 25px; /* Diminui ícone carrinho */
+   }
+}
+
+/* Regra original para 350px mantida e adaptada */
+@media (max-width: 350px) {
+  main {
+    padding: 1rem 0.5rem; /* Ajuste fino do padding */
+    /* max-width: 100vw; não é ideal, deixe o browser cuidar disso com padding */
+  }
+  /* A regra grid-template-columns: 1fr; já pode estar ativa vinda do max-width: 400px */
+
+}

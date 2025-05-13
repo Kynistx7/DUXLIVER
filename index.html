@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Loja Exemplo - Site de Vendas</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <div class="logo-titulo">
+      <img src="img/imagem_2025-05-12_183741827-removebg-preview.webp" alt="Logo" />
+      <h1>DUXLIVER</h1>
+    </div>
+    <div class="navegacao">
+      <a href="login.html">Entrar</a>
+      <a href="">Registrar</a>
+      <a href="index.html">Ajuda</a>
+      <a href="carrinho.html" class="link-carrinho"> <img src="img/57451.png" alt="Carrinho">
+        <span id="cart-bagde" class="cart-bagde" style="display: none;">0</span></a>
+    </div>
+  </div>
+</header>
+<main>
+  <!-- Mensagem de boas-vindas -->
+  <section class="boas-vindas">
+    <div class="boas-vindas-conteudo">
+      <h1>Bem-vindo à DUXLIVER!</h1>
+      <p>Explore nossos produtos e aproveite as melhores ofertas.</p>
+    </div>
+  </section>
+
+  <!-- Lista de produtos -->
+  <div class="produtos" id="produtos">
+    <!-- Produtos renderizados pelo JS -->
+  </div>
+
+  <section class="carrinho" id="carrinho-section" style="display:none;">
+    <h2>Carrinho de Compras</h2>
+    <div class="carrinho-lista" id="carrinho-lista">
+      <!-- Itens do carrinho -->
+    </div>
+  </section>
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+

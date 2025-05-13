@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho de Compras - DUXLIVER</title>
+  <link rel="stylesheet" href="css/style.css" /> <style>  
+  
+    /* Estilos específicos para a página do carrinho (opcional) */
+    .pagina-carrinho {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .pagina-carrinho h1 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #333;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 0.8rem;
+    }
+    .item-carrinho-detalhado {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .item-carrinho-detalhado:last-child {
+        border-bottom: none;
+    }
+    .item-carrinho-detalhado img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid #eee;
+    }
+    .item-info { flex-grow: 1; }
+    .item-info h3 { margin: 0 0 0.3rem 0; font-size: 1.1rem; }
+    .item-info p { margin: 0; color: #555; font-size: 0.9rem; }
+    .item-preco-unitario { color: #888; font-size: 0.9rem;}
+
+    .item-quantidade-controles {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .item-quantidade-controles button {
+        padding: 0.2rem 0.5rem;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+        font-weight: bold;
+    }
+    .item-quantidade-controles span {
+        min-width: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .item-subtotal { font-weight: bold; min-width: 80px; text-align: right; }
+    .item-remover button {
+        background: none;
+        border: none;
+        color: #dc3545;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+    .item-remover button:hover { color: #a71d2a; }
+
+    .carrinho-vazio {
+        text-align: center;
+        padding: 2rem;
+        color: #777;
+    }
+
+    .resumo-carrinho {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid #eee;
+        text-align: right;
+    }
+    .resumo-carrinho h2 { font-size: 1.4rem; margin-bottom: 1rem; color: #333; }
+    .resumo-carrinho p { font-size: 1.2rem; font-weight: bold; color: #007bff; margin-bottom: 1.5rem;}
+
+    .botoes-carrinho {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+     .botoes-carrinho button, .botoes-carrinho a {
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+    }
+    .botao-continuar {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+    }
+     .botao-continuar:hover { background-color: #5a6268; }
+
+    .botao-finalizar {
+        background-color: #28a745;
+        color: white;
+        border: none;
+    }
+     .botao-finalizar:hover { background-color: #218838; }
+
+    @media (max-width: 600px) {
+        .item-carrinho-detalhado { flex-wrap: wrap; }
+        .item-info { flex-basis: 100%; margin-bottom: 0.5rem; order: 1;}
+        .item-carrinho-detalhado img { order: 0; flex-basis: auto; margin-bottom: 0.5rem; }
+        .item-quantidade-controles { order: 2; flex-basis: 50%; justify-content: center; }
+        .item-subtotal { order: 3; flex-basis: 40%; text-align: right;}
+        .item-remover { order: 4; flex-basis: 10%; text-align: right;}
+        .botoes-carrinho { flex-direction: column; gap: 0.5rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-titulo">
+        <img src="img/imagem_2025-05-12_183741827-removebg-preview.webp" alt="Logo" />
+        <h1>DUXLIVER</h1>
+      </div>
+      <div class="navegacao">
+        <a href="index.html">Entrar</a>
+        <a href="index.html">Registrar</a>
+        <a href="index.html">Ajuda</a>
+        <a href="carrinho.html" class="link-carrinho">
+          <img src="img/57451.png" alt="Carrinho">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-carrinho">
+      <h1>Meu Carrinho de Compras</h1>
+
+      <div id="itens-do-carrinho">
+        </div>
+
+      <div id="carrinho-vazio-mensagem" style="display: none;">
+          <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+      </div>
+
+      <div class="resumo-carrinho" id="resumo-carrinho" style="display: none;">
+        <h2>Resumo do Pedido</h2>
+        <p id="total-carrinho">Total: R$ 0,00</p>
+        <div class="botoes-carrinho">
+            <a href="index.html" class="botao-continuar">Continuar Comprando</a>
+            <button class="botao-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="js/script2.js"></script>
+
+</body>
+</html>

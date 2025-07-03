@@ -1,0 +1,144 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+    font-family: 'Open Sans', sans-serif; /* Corrigido para uma fonte real do Google Fonts */
+    margin: 0;
+    min-height: 100vh;
+    background-color: yellow; /* Fundo cinza claro, como na referência */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 900px; /* Largura máxima do container */
+    background-color: white; /* Fundo branco para a parte da logo */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- SEÇÃO DA LOGO (ESQUERDA) --- */
+.left-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.logo {
+    max-width: 250px; /* Tamanho ajustado da logo */
+    height: auto;
+}
+
+/* --- SEÇÃO DO FORMULÁRIO (DIREITA) --- */
+.right-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9; /* Fundo cinza bem claro para o formulário */
+}
+
+#cadastro-form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    color: #1c1c1c;
+    margin-bottom: 25px;
+    font-size: 1.8em; /* 28px */
+    font-weight: 700;
+    text-align: center;
+}
+
+.input-wrapper {
+    margin-bottom: 15px; /* Espaço entre os campos */
+    position: relative;
+}
+
+.input-wrapper label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9em; /* 14px */
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em; /* 16px */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+button[type="submit"] {
+    background-color: #0056b3; /* Cor azul do botão na imagem */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 10px; /* Espaço acima do botão */
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #004494; /* Azul mais escuro no hover */
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.login-link a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Colunas uma em cima da outra */
+        width: 95%;
+        margin: 20px 0;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        box-sizing: border-box; /* Garante que o padding não quebre o layout */
+    }
+
+    .left-section {
+        padding: 30px;
+    }
+}

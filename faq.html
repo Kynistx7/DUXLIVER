@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - UniMaps</title>
+    <link rel="stylesheet" href="css/faq.css">
+    <style>
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/imagem_2025-05-12_183741827-removebg-preview.webp" alt="UniAnchieta logo" class="logod" width="60px">
+        <nav aria-label="Navegação Principal">
+            <a href="index.html" id="login-link">Home</a>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <div class="faq">
+                <h1>FAQ - DUXLIVER</h1>
+                <div class="faq-item">
+                    <button class="faq-question">Entrega e prazos</button>
+                    <div class="faq-answer">
+                        <p>Os prazos variam de acordo com sua localização. Após o envio, você recebe um código de rastreio para acompanhar.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Quais formas de pagamento vocês aceitam?</button>
+                    <div class="faq-answer">
+                        <p>Aceitamos cartões de crédito, débito, Pix, boleto e carteiras digitais.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Preciso criar uma conta para usar o site?</button>
+                    <div class="faq-answer">
+                        <p>Não! Caso queira apenas navegar pelo site não é nescessario, entretanto para realizar uma compra é preciso estar logado.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"> Como entro em contato com a loja?</button>
+                    <div class="faq-answer">
+                        <p>Utilize nossos canais de atendimento,Você pode falar conosco pelo WhatsApp, e-mail ou pelo chat do site.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

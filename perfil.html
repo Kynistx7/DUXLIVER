@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - DUXLIVER</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-titulo">
+                <img src="img/imagem_2025-05-12_183741827-removebg-preview.webp" alt="Logo" />
+                <h1>DUXLIVER</h1>
+            </div>
+            <div class="navegacao">
+                <span id="nome-usuario-perfil" style="font-weight: bold;"></span>
+                <a href="index.html">Voltar para a loja</a>
+                <button id="logout-button" style="margin-left: 15px; background: none; border: none; color: #007bff; font-weight: bold; cursor: pointer;">
+                    Sair
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="perfil-container">
+            <h2>Meu Perfil</h2>
+            <div id="perfil-info" style="display:none;">
+                <p><strong>Nome:</strong> <span id="perfil-nome"></span></p>
+                <p><strong>Email:</strong> <span id="perfil-email"></span></p>
+                <p><strong>Endereço:</strong> <span id="perfil-endereco"></span></p>
+                <p><strong>Telefone:</strong> <span id="perfil-telefone"></span></p>
+                <p><strong>CPF:</strong> <span id="perfil-cpf"></span></p>
+                <button id="editar-perfil-btn" type="button">Editar</button>
+            </div>
+            <form id="perfil-form" style="display:none;">
+                <input type="text" id="endereco" name="endereco" placeholder="Endereço">
+                <input type="text" id="telefone" name="telefone" placeholder="Telefone">
+                <input type="text" id="cpf" name="cpf" placeholder="CPF">
+                <button type="submit">Salvar Dados</button>
+            </form>
+            <div id="mensagem-perfil"></div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

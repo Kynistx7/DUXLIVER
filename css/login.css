@@ -1,95 +1,63 @@
-/* --- Fontes --- */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-/* --- Reset Básico e Estilos Globais --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: "Open Sans", sans-serif; /* Corrigido nome da fonte */
+    font-family: "Opens", sans-serif;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
-    background-color: rgb(243, 231, 3); /* Cor de fundo mais escura para o corpo */
-    color: #e0e0e0; /* Cor de texto padrão clara para contraste */
-    padding: 15px; /* Adiciona um respiro em telas muito pequenas */
+    height: 100vh;
+    background-color: yellow;
+    color: #333;
 }
 
-/* --- Container Principal --- */
+.login {
+    max-width: 300px;
+    margin-bottom: 5vh;
+}
+
 .container {
     display: flex;
-    width: 100%; /* Ocupa a largura disponível, respeitando o padding do body */
-    max-width: 1100px; /* Largura máxima aumentada um pouco */
-    background-color: yellow; /* Cinza escuro para o container */
-    border-radius: 10px; /* Bordas levemente mais arredondadas */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgb(245, 242, 242);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-/* --- Seções (Esquerda e Direita) --- */
 .left-section {
-    width: 50%; /* Divide o espaço igualmente */
-    /* Mantendo um gradiente, mas com os tons escuros */
-    background-color: yellow;
+    width: 80%;
+    background-color: white;
     color: white;
-    padding: 40px; /* Mais padding */
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Centraliza texto/logo */
 }
 
 .right-section {
-    width: 50%; /* Divide o espaço igualmente */
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px; /* Mais padding */
-    background-color: rgb(14, 13, 13) /* Garante fundo uniforme */
 }
 
-/* --- Logo --- */
-.logo {
-    max-width: 75%; /* Ajuste conforme necessário */
-    height: auto; /* Mantém proporção */
-    margin-bottom: 25px;
-    /* Se o seu logo for escuro, pode precisar de um filtro para aparecer bem */
-    /* filter: brightness(0) invert(1); */ /* Exemplo: Inverte cores (preto vira branco) */
-}
-
-/* --- Caixa de Login/Cadastro --- */
-.login-box, .cadastro-box { /* Unificado */
-    width: 100%;
-    max-width: 380px; /* Aumenta um pouco a largura máxima */
+.login-box, .cadastro-box {
+    width: 80%;
+    padding: 20px;
     text-align: center;
 }
 
 .login-box h2, .cadastro-box h2 {
-    color: #ffffff; /* Título branco */
-    margin-bottom: 30px; /* Mais espaço abaixo do título */
-    font-size: 2.2em; /* Título maior */
-    font-weight: 600; /* Peso da fonte */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Mantém a fonte do sistema */
+    color: #131314;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* --- Grupos de Input --- */
 .input-group {
     position: relative;
-    margin-bottom: 25px; /* Mais espaço entre inputs */
-    text-align: left; /* Alinha label à esquerda */
-}
-
-.input-group label {
-    display: block; /* Quebra linha */
-    color: #b0b0b0; /* Cinza claro para label */
-    margin-bottom: 8px; /* Espaço abaixo do label */
-    font-size: 0.9em;
-    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .input-wrapper {
@@ -97,156 +65,106 @@ body {
 }
 
 .input-wrapper input[type="email"],
-.input-wrapper input[type="password"] {
-    width: 100%; /* Ocupa toda a largura */
-    padding: 14px 12px; /* Padding interno (vertical, horizontal) */
-    border: 1px solid #444; /* Borda cinza mais escura */
-    border-radius: 6px; /* Bordas mais suaves */
-    background-color: #f8f5f5; /* Fundo do input levemente diferente */
-    color: #e0e0e0; /* Texto claro dentro do input */
-    font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
-}
-
-/* Estilo de Foco para Inputs */
-.input-wrapper input[type="email"]:focus,
-.input-wrapper input[type="password"]:focus {
-    outline: none; /* Remove o outline padrão */
-    border-color: #1e90ff; /* Uma cor de destaque (azul dodger) para foco */
-    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2); /* Sombra externa suave no foco */
-}
-
-/* Placeholder Styling */
-.input-wrapper input::placeholder {
-    color: #777; /* Cor do placeholder */
-    opacity: 1; /* Garante visibilidade */
-}
-
-/* Remove a definição de .icon se não estiver usando ícones */
-/* .input-wrapper .icon { ... } */
-
-/* --- Botões --- */
-.login-box button, .cadastro-box button {
-    background-color: yellow; /* Azul dodger como cor principal do botão */
-    color: rgb(10, 10, 10);
-    padding: 14px 20px;
-    border: none;
+.input-wrapper input[type="password"],
+.input-wrapper input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #bdbdbd;
     border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: 12px;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.input-wrapper input[type="email"]:focus,
+.input-wrapper input[type="password"]:focus,
+.input-wrapper input[type="text"]:focus {
+    border-color: #1e0ff1;
+    box-shadow: 0 0 0 2px rgba(30, 15, 241, 0.08);
+    background: #fff;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+}
+
+.input-wrapper label {
+    display: block;
+    margin-bottom: 6px;
+    color: #222;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.login-box button, .cadastro-box button {
+    background-color: #1e0ff1;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Transição suave */
-    margin-top: 15px; /* Espaço acima do botão */
+    font-size: 1em;
 }
 
 .login-box button:hover, .cadastro-box button:hover {
-    background-color: #0e0e0f; /* Azul um pouco mais escuro no hover */
+    background-color: #2c07e2;
 }
 
-.login-box button:active, .cadastro-box button:active {
-    transform: scale(0.98); /* Efeito de clique */
-}
-
-/* --- Links e Textos Adicionais --- */
 .login-box p, .cadastro-box p {
-    margin-top: 25px; /* Mais espaço */
-    font-size: 0.95em; /* Tamanho do texto */
-    color: #0f0f0f; /* Cor do texto */
+    margin-top: 50px;
+    font-size: 0.9em;
 }
 
 .login-box a, .cadastro-box a {
-    color: #1e90ff; /* Mesma cor do botão para links */
+    color: #230bf9;
     text-decoration: none;
-    font-weight: 600;
 }
 
 .login-box a:hover, .cadastro-box a:hover {
     text-decoration: underline;
-    color: #4caaff; /* Cor mais clara no hover do link */
 }
 
-/* --- Mensagem de Erro --- */
-#error-message {
-    color: #ff6b6b; /* Vermelho mais vibrante para erros */
-    margin-top: -15px; /* Puxa para mais perto do campo acima */
-    margin-bottom: 15px;
-    font-size: 0.9em;
-    font-weight: 500;
-    min-height: 1.2em; /* Garante espaço mesmo vazio */
-    text-align: left; /* Alinha à esquerda */
+.logo {
+    max-width: 80%;
+    margin-bottom: 20px;
 }
 
-/* --- Indicador de Loading (se usar o de app.js) --- */
-.loading-indicator {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(30, 30, 30, 0.85); /* Fundo #1e1e1e com transparência */
-    color: rgb(5, 5, 5);
-    padding: 25px 35px;
-    border-radius: 8px;
-    z-index: 1000;
-    font-family: "Open Sans", sans-serif;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(3px); /* Efeito de desfoque no fundo (suporte limitado) */
-}
-
-
-/* --- Media Queries para Responsividade --- */
-@media (max-width: 992px) { /* Ajusta ponto de quebra */
+/* Media queries para responsividade */
+@media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Empilha as seções */
+        flex-direction: column-reverse; /* Inverte a ordem das seções */
     }
 
     .left-section, .right-section {
-        width: 100%; /* Ocupa toda a largura */
-    }
-
-    .left-section {
-        padding: 30px;
-        min-height: 200px; /* Altura mínima para a seção do logo */
-        border-bottom: 1px solid #444; /* Linha divisória */
-    }
-
-    .right-section {
-        padding: 30px;
-    }
-
-     .logo {
-        max-width: 50%; /* Reduz logo em telas menores */
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 0; /* Remove padding do body em telas muito pequenas */
-    }
-    .container {
-        border-radius: 0; /* Remove bordas arredondadas */
-        min-height: 100vh;
+    .left-section h1 {
+        font-size: 1.8em;
+        text-align: center;
     }
 
-    .left-section, .right-section {
-        padding: 25px; /* Ajusta padding */
+    .left-section h2 {
+        font-size: 1.1em;
+        text-align: center;
     }
 
-    .login-box h2, .cadastro-box h2 {
-        font-size: 1.9em; /* Reduz título */
+    .left-section p {
+        font-size: 0.8em;
     }
 
-    .input-wrapper input[type="email"],
-    .input-wrapper input[type="password"] {
-        padding: 12px 10px; /* Ajusta padding interno */
-    }
-
-    .login-box button, .cadastro-box button {
-        padding: 12px 15px; /* Ajusta padding do botão */
-        font-size: 1em;
-    }
-
-     .logo {
-        max-width: 60%; /* Ajusta logo */
+    .logo {
+        max-width: 90%;
     }
 }

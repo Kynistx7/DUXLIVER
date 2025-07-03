@@ -89,12 +89,58 @@ main {
 
 /* --- Estilos da Grade de Produtos --- */
 .produtos {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 700px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produtos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.produtos-lista {
   display: grid;
-  /* Cria colunas responsivas:
-     - Repete colunas que tenham no mínimo 150px e no máximo 1fr (fração do espaço)
-     - Adapta o número de colunas à largura da tela */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem; /* Aumenta o espaço entre os produtos */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.produtos-lista .produto-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Garante que o botão fique na parte inferior */
+}
+
+.produtos-lista .produto-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.produtos-lista .produto-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.produtos-lista .produto-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.produtos-lista .produto-card .preco {
+  font-weight: bold;
+  color: #007bff;
 }
 
 .produto {
@@ -142,13 +188,15 @@ button.adicionar {
   background: #28a745;
   border: none;
   color: white;
-  padding: 0.6rem 1rem; /* Aumenta padding do botão */
+  padding: 0.6rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
-  width: 100%;
+  font-size: 0.9rem;
+  display: block; /* Garante que o botão seja exibido */
+  margin-top: 0.5rem; /* Espaço entre o botão e o conteúdo acima */
+  width: 100%; /* Faz o botão ocupar toda a largura do card */
   transition: background 0.3s ease;
-  font-size: 0.9rem; /* Ajusta tamanho da fonte do botão */
 }
 
 button.adicionar:hover {
@@ -249,6 +297,168 @@ button.adicionar:hover {
   margin-bottom: 2rem;
 }
 
+.ofertas  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.ofertas h2 {
+  font-size: 1.5rem;
+  color: #ad1919;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Estilos adicionais para a mensagem de boas-vindas */
+#mensagem-boas-vindas {
+    font-size: 2em;      /* Tamanho de h1 */
+    font-weight: bold;   /* Negrito */
+    margin: 24px 0 16px 0;
+    text-align: center;
+    color: #222;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Estilo para o container do perfil */
+.perfil-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 50px 40px;
+    max-width: 1200px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+.perfil-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #222;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+/* Informações do perfil */
+#perfil-info p {
+    margin: 10px 0;
+    font-size: 1.05em;
+    color: #333;
+}
+#perfil-info button {
+    margin-top: 18px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+#perfil-info button:hover {
+    background: #0056b3;
+}
+
+/* Formulário de edição */
+#perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+#perfil-form input[type="text"] {
+    padding: 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+#perfil-form input[type="text"]:focus {
+    border-color: #007bff;
+    background: #fff;
+    outline: none;
+}
+
+#perfil-form button[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#perfil-form button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* Mensagem de feedback */
+#mensagem-perfil {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 1em;
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* --- Estilos Detalhes do Produto --- */
+#detalhes-produto {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+#detalhes-produto img {
+    display: block;
+    margin: 0 auto 24px auto;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#detalhes-produto h1 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: #222;
+}
+
+#detalhes-produto p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #444;
+}
+
+#detalhes-produto button {
+    margin-top: 24px;
+    padding: 12px 32px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#detalhes-produto button:hover {
+    background: #0056b3;
+}
+
 /* --- Estilos Responsivos --- */
 @media (max-width: 768px) {
   /* Ajustes para tablets */
@@ -289,6 +499,10 @@ button.adicionar:hover {
    .produtos {
        gap: 1rem; /* Diminui gap dos produtos */
    }
+  button.adicionar {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -324,4 +538,15 @@ button.adicionar:hover {
   }
   /* A regra grid-template-columns: 1fr; já pode estar ativa vinda do max-width: 400px */
 
+}
+
+#tamanhos-disponiveis {
+    margin: 18px 0 10px 0;
+    font-size: 1.05rem;
+}
+
+.tamanhos-em-breve {
+    color: #888;
+    font-style: italic;
+    margin-left: 8px;
 }

@@ -1,51 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Loja Exemplo - Site de Vendas</title>
-<link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DUXLIVER- Site de Vendas</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<header>
-  <div class="header-content">
-    <div class="logo-titulo">
-      <img src="img/imagem_2025-05-12_183741827-removebg-preview.webp" alt="Logo" />
-      <h1>DUXLIVER</h1>
-    </div>
-    <div class="navegacao">
-      <a href="login.html">Entrar</a>
-      <a href="">Registrar</a>
-      <a href="index.html">Ajuda</a>
-      <a href="carrinho.html" class="link-carrinho"> <img src="img/57451.png" alt="Carrinho">
-        <span id="cart-bagde" class="cart-bagde" style="display: none;">0</span></a>
-    </div>
-  </div>
-</header>
-<main>
-  <!-- Mensagem de boas-vindas -->
-  <section class="boas-vindas">
-    <div class="boas-vindas-conteudo">
-      <h1>Bem-vindo à DUXLIVER!</h1>
-      <p>Explore nossos produtos e aproveite as melhores ofertas.</p>
-    </div>
-  </section>
+    <header>
+        <div class="header-content">
+            <div class="logo-titulo">
+                <img src="img/imagem_2025-05-12_183741827-removebg-preview.webp" alt="Logo" />
+                <h1>DUXLIVER</h1>
+            </div>
+             <div class="navegacao">
+                <a id="login-link" href="login.html">Entrar</a>
+                <a id="registrar-link" href="cadastro.html">Registrar</a>
+                <a id="icone-perfil" href="perfil.html" class="link-carrinho" style="display:none;">
+                    <img src="img/perfil,ss.png" alt="Perfil">
+                </a>
+                  <a href="faq.html" id="icone-ajuda" class="link-carrinho" title="Ajuda">
+                    <img src="img/ajuda.png" alt="Ajuda" style="width:28px; height:28px;">
+                <a href="carrinho.html" class="link-carrinho">
+                    <img src="img/57451.png" alt="Carrinho">
+                    <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
+                </a>
+                <form id="busca-navbar" style="display:inline-block; margin-left:20px;">
+                    <input type="text" id="input-busca-navbar" placeholder="Buscar produto..." style="padding:4px 8px; border-radius:5px; border:1px solid #ccc;">
+                    <button type="submit" style="padding:4px 10px; border-radius:5px; border:none; background:#007bff; color:#fff; font-weight:bold; cursor:pointer;">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="boas-vindas">
+            <div class="boas-vindas-conteudo">
+                 <div id="mensagem-boas-vindas"></div>
+                <p>Explore nossos produtos e aproveite as melhores ofertas.</p>
+            </div>
+        </section>
+        
+        <div id="mensagem-boas-vindas"></div>
+        
 
-  <!-- Lista de produtos -->
-  <div class="produtos" id="produtos">
-    <!-- Produtos renderizados pelo JS -->
-  </div>
+        <section class="produtos" id="calcados-secao">
+            <h2>CALÇADOS</h2>
+            <div class="produtos-lista" id="calcados-lista"></div>
+        </section>
 
-  <section class="carrinho" id="carrinho-section" style="display:none;">
-    <h2>Carrinho de Compras</h2>
-    <div class="carrinho-lista" id="carrinho-lista">
-      <!-- Itens do carrinho -->
-    </div>
-  </section>
-</main>
+        <section class="produtos" id="camisas-secao">
+            <h2>CAMISAS</h2>
+            <div class="produtos-lista" id="camisas-lista"></div>
+        </section>
 
-<script src="js/script.js"></script>
+        <section class="produtos" id="acessorios-secao">
+            <h2>ACESSORIOS</h2>
+            <div class="produtos-lista" id="acessorios-lista"></div>
+        </section>
 
+        <section class="produtos" id="agasalhos-secao">
+            <h2>AGASALHOS</h2>
+            <div class="produtos-lista" id="agasalhos-lista"></div>
+        </section>
+    </main>
+    <div id="perfil-usuario"></div>
+    <script src="js/script.js" type="module"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ...navbar e login...
+
+            // Só carrega produtos na página principal
+            if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+                buscarCategorias();
+                buscarTodosOsProdutosParaFiltro();
+            }
+
+            // ...buscador da navbar...
+        });
+
+        // Função para buscar produtos por categoria
+        function buscarEExibirProdutosPorCategoria(termo) {
+            // Lógica para buscar e exibir produtos por categoria
+            // ...
+
+            if (!termo) {
+                buscarEExibirProdutosPorCategoria(); // Se vazio, recarrega todas as seções
+                return;
+            }
+
+            // Resto da lógica para buscar e exibir produtos por categoria
+            // ...
+        }
+
+        window.adicionarAoCarrinho = adicionarAoCarrinho;
+    </script>
 </body>
 </html>
-

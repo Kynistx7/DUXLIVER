@@ -114,6 +114,22 @@
     }
      .botao-finalizar:hover { background-color: #218838; }
 
+    a.voltar-loja {
+      display: inline-block; /* Torna o link um bloco inline para aplicar padding */
+      padding: 0.8rem 1.5rem; /* Adiciona espaçamento interno */
+      background-color: #007bff; /* Cor de fundo */
+      color: white; /* Cor do texto */
+      text-decoration: none; /* Remove o sublinhado */
+      border-radius: 5px; /* Bordas arredondadas */
+      font-weight: bold; /* Deixa o texto em negrito */
+      text-align: center; /* Centraliza o texto */
+      transition: background-color 0.3s ease; /* Transição suave para hover */
+    }
+
+    a.voltar-loja:hover {
+      background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    }
+
     @media (max-width: 600px) {
         .item-carrinho-detalhado { flex-wrap: wrap; }
         .item-info { flex-basis: 100%; margin-bottom: 0.5rem; order: 1;}
@@ -154,6 +170,7 @@
 
       <div id="carrinho-vazio-mensagem" style="display: none;">
           <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+          <a href="index.html" class="voltar-loja">Voltar para a loja</a>
       </div>
 
       <div class="resumo-carrinho" id="resumo-carrinho" style="display: none;">

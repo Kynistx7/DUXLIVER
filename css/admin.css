@@ -1,0 +1,151 @@
+/* css/admin.css */
+
+/* Estilos gerais para a página de administração */
+.admin-container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-container h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* Estilos para a seção de adicionar produto */
+#adicionar-produto {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+#form-adicionar-produto > div {
+    margin-bottom: 1rem;
+}
+
+#form-adicionar-produto label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+#form-adicionar-produto input[type="text"],
+#form-adicionar-produto input[type="number"],
+#form-adicionar-produto input[type="url"],
+#form-adicionar-produto textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#form-adicionar-produto textarea {
+    min-height: 80px;
+}
+
+#form-adicionar-produto button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#form-adicionar-produto button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a seção de gerenciar produtos */
+#gerenciar-produtos {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+#lista-de-produtos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#lista-de-produtos th,
+#lista-de-produtos td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#lista-de-produtos th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#lista-de-produtos tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#lista-de-produtos button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+#lista-de-produtos button:hover {
+    background-color: #218838;
+}
+
+#lista-de-produtos button:last-child {
+    background-color: #dc3545;
+}
+
+#lista-de-produtos button:last-child:hover {
+    background-color: #c82333;
+}
+
+/* Estilos responsivos (opcional, adapte conforme necessário) */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    #lista-de-produtos th,
+    #lista-de-produtos td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    #form-adicionar-produto input[type="text"],
+    #form-adicionar-produto input[type="number"],
+    #form-adicionar-produto input[type="url"],
+    #form-adicionar-produto textarea,
+    #form-adicionar-produto button[type="submit"] {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    #lista-de-produtos button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin-right: 0.3rem;
+    }
+}

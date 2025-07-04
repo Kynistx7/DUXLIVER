@@ -2,5 +2,5 @@ flask
 SQLAlchemy
 flask-cors
 Werkzeug
-guicorn
+gunicorn
 psycopg2-binary

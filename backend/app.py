@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify, request
 from sqlalchemy import create_engine, Column, String, Integer, Float, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
@@ -8,12 +9,11 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Configuração do banco de dados
-DATABASE_URL = "sqlite:///banco.db"
+DATABASE_URL = os.environ.get("DATABASE_URL", "sqlite:///banco.db")
 engine = create_engine(
     DATABASE_URL,
-    connect_args={"check_same_thread": False, "timeout": 30},
-    pool_size=20,         # aumenta o número de conexões simultâneas
-    max_overflow=30,      # aumenta o número de conexões extras
+    pool_size=20,
+    max_overflow=30,
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()

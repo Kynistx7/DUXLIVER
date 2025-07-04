@@ -1,6 +1,6 @@
-Flask
+flask
 SQLAlchemy
 flask-cors
-Werkzeug
+Werkzeug 
 gunicorn
 psycopg2-binary
